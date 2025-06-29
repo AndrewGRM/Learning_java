@@ -36,17 +36,29 @@ public abstract class conta implements interface_conta {
 
     @Override
     public void sacar(double valor) {
-        saldo -= valor;
+        if (valor < 0) {
+            System.out.println("Não foi possível efetuar o saque, o valor precisa ser maior que Zero");
+        } else {
+            saldo -= valor;
+        }
     }
 
     @Override
     public void depositar(double valor) {
-        saldo += valor;
+        if (valor < 0 ) {
+            System.out.println("Não foi possível fazer o depósito, o valor precisa ser acima de Zero");
+        } else {
+            saldo += valor;
+        }
     }
 
     @Override
     public void transferir(double valor, conta contaDestino) {
-        this.sacar(valor);
-        contaDestino.depositar(valor);
+        if(valor < 0) {
+            System.out.println("O valor para transferir precisa ser maior que zero");
+        } else {
+            this.sacar(valor);
+            contaDestino.depositar(valor);
+        }
     }
 }
