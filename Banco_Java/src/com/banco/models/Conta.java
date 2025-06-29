@@ -1,4 +1,6 @@
-public abstract class conta implements interface_conta {
+package com.banco.models;
+
+public abstract class Conta implements InterfaceConta {
 
     private static int Agencia_Padrao = 1;
     private static int SEQUENCIAL = 1;
@@ -6,12 +8,12 @@ public abstract class conta implements interface_conta {
     protected int agencia;
     protected int numero;
     protected double saldo;
-    protected cliente cliente;
+    protected Cliente Cliente;
 
-    public conta(cliente cliente) {
-        this.agencia = conta.Agencia_Padrao;
+    public Conta(Cliente cliente) {
+        this.agencia = Conta.Agencia_Padrao;
         this.numero = SEQUENCIAL++;
-        this.cliente = cliente;
+        this.Cliente = cliente;
     }
 
     public int getAgencia() {
@@ -27,7 +29,7 @@ public abstract class conta implements interface_conta {
     }
 
     protected void imprimirInfos() {
-        System.out.println(String.format("Titular: %s", this.cliente.getNome()));
+        System.out.println(String.format("Titular: %s", this.Cliente.getNome()));
         System.out.println(String.format("Agencia: %d", this.agencia));
         System.out.println(String.format("Número: %d", this.numero));
         System.out.println(String.format("Saldo: %.2f", this.saldo));
@@ -53,7 +55,7 @@ public abstract class conta implements interface_conta {
     }
 
     @Override
-    public void transferir(double valor, conta contaDestino) {
+    public void transferir(double valor, Conta contaDestino) {
         if(valor < 0) {
             System.out.println("O valor para transferir precisa ser maior que zero");
         } else {

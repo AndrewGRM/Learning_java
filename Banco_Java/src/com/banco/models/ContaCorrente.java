@@ -1,6 +1,8 @@
-public class ContaCorrente extends conta {
+package com.banco.models;
 
-    public ContaCorrente(cliente cliente) {
+public class ContaCorrente extends Conta {
+
+    public ContaCorrente(Cliente cliente) {
         super(cliente);
     }
 

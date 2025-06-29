@@ -1,15 +1,24 @@
+package com.banco.main;
+
+import com.banco.models.Cliente;
+import com.banco.models.ContaCorrente;
+import com.banco.models.ContaPoupanca;
+import com.banco.models.Cliente;
+import com.banco.models.Conta;
+
 import java.util.Scanner;
+
 
 public class Main {
 
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        cliente Andrew = new cliente();
+        Cliente Andrew = new Cliente();
         Andrew.setNome("Andrew");
 
-        conta cc = new ContaCorrente(Andrew);
-        conta poupanca = new ContaPoupanca(Andrew);
+        Conta cc = new ContaCorrente(Andrew);
+        Conta poupanca = new ContaPoupanca(Andrew);
 
         int escolha;
         do {

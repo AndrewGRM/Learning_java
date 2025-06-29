@@ -1,6 +1,8 @@
-public class ContaPoupanca extends conta{
+package com.banco.models;
 
-    public ContaPoupanca(cliente cliente) {
+public class ContaPoupanca extends Conta {
+
+    public ContaPoupanca(Cliente cliente) {
         super(cliente);
     }
 

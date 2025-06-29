@@ -1,4 +1,6 @@
-public class cliente {
+package com.banco.models;
+
+public class Cliente {
 
     private String nome;
 
